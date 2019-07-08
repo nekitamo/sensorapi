@@ -40,20 +40,20 @@ $ Ctrl-D
 3. Clone this repository to the local machine and install additional PostgreSQL/Swagger NuGet packages by executing the following commands:
 ```sh
 $ mkdir -p src; cd src
-$ git clone <this-github-url>
-$ cd SensorAPI
+$ git clone https://github.com/nekitamo/sensorapi.git
+$ cd sensorapi
 $ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL # add --version to match .NET framework
 $ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL.Design
 $ dotnet add package Swashbuckle.AspNetCore # Swagger support
 ```
 
-4. Edit the database password entry in appsettings.json and appsettings.Development.json (use sensorapi password from step 2). Before the first startup, the database is empty and has to be initialized. The following commands will create initial EntityFramework model bindings and set the database (check that you're in SensorAPI directory created in previous step):
+4. Edit the database password entry in appsettings.json and appsettings.Development.json (use sensorapi password from step 2). Before the first startup, the database is empty and has to be initialized. The following commands will create initial EntityFramework model bindings and set the database (check that you're in sensorapi directory created in previous step):
 ```sh
 $ dotnet ef migrations add initial
 $ dotnet ef database update
 ```
 
-5. Download and install Visual Studio Code from [here](https://code.visualstudio.com/). Start it, add Microsoft's C# extension and open the SensorAPI folder created in step 3 (i.e. ~/src/SensorAPI). Start debugging by pressing F5...
+5. Download and install Visual Studio Code from [here](https://code.visualstudio.com/). Start it, add Microsoft's C# extension and open the SensorAPI folder created in step 3 (i.e. ~/src/sensorapi). Start debugging by pressing F5...
 
 ## API Specification
 
