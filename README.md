@@ -19,7 +19,7 @@ $ dotnet --info
  ...
  ```
 
-2. Install PostgreSQL database server and create application user and database by executing the following commands (note that you have to select the password):
+2. Install PostgreSQL database server and create the application user by executing the following commands (note that you have to select the password):
 ```sh
 $ sudo apt install postgresql
 $ sudo -iu postgres
@@ -33,21 +33,17 @@ Type "help" for help.
 postgres=# alter user sensorapi password '<password>';
 ALTER ROLE
 postgres=# \q
-$ createdb sensorapi --owner sensorapi
-$ Ctrl-D
 ```
 
-3. Clone this repository to the local machine and install additional PostgreSQL/Swagger NuGet packages by executing the following commands:
+3. Clone this repository to the local machine and build it by executing the following commands (dotnet build will automatically install additional PostgreSQL/Swagger NuGet packages):
 ```sh
 $ mkdir -p src; cd src
 $ git clone https://github.com/nekitamo/sensorapi.git
 $ cd sensorapi
-$ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL # add --version to match .NET framework
-$ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL.Design
-$ dotnet add package Swashbuckle.AspNetCore # Swagger support
+$ dotnet build
 ```
 
-4. Edit the database password entry in appsettings.json and appsettings.Development.json (use sensorapi password from step 2). Before the first startup, the database is empty and has to be initialized. The following commands will create initial EntityFramework model bindings and set the database (check that you're in sensorapi directory created in previous step):
+4. Edit the database password entry in appsettings.json and appsettings.Development.json (use sensorapi password from step 2). Before the first startup, the database has to be initialized. The following commands will create initial EntityFramework model bindings and create the database (check that you're in sensorapi directory created in the previous step):
 ```sh
 $ dotnet ef migrations add initial
 $ dotnet ef database update
