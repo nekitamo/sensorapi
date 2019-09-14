@@ -4,7 +4,7 @@ Simple REST Web API server written in C# with the following features:
 - Kestrel ASP . NET web server with MVC framework,
 - PostgreSQL database accessed via EntityFramework.
 
-The intended use case for this server is to provide a simple, universal storage API for Mobile or IoT sensors (temperature, humidity, location, etc.). This is just a proof-of-concept lacking authentication, encryption and other production-use requirements.
+The intended use case for this server is to provide a simple, universal storage API for Mobile or IoT sensors (temperature, humidity, location, etc.). **This is just a simple proof-of-concept without authentication, encryption or other production-use requirements**, so it's pretty much in keep with the saying that "S" stands for "Security" in IoT.
 The development was done exclusively in Linux OS with Visual Studio Code as the main IDE.
 Installation and other instructions are intended for Debian/Ubuntu flavored Linux distributions.
 
